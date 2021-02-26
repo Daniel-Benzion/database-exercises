@@ -37,3 +37,15 @@ WHERE
      first_name = 'Vidya' OR
      first_name = 'Maya')
   AND gender = 'M';
+
+SELECT *
+FROM employees
+WHERE
+      last_name LIKE 'e%' OR
+      last_name LIKE '%e';
+
+SELECT *
+FROM employees
+WHERE
+        last_name LIKE 'e%' AND
+        last_name LIKE '%e';
