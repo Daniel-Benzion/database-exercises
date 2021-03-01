@@ -38,3 +38,12 @@ WHERE d.dept_no IN (
         )
     )
 ORDER BY d.dept_name;
+
+SELECT e.first_name, e.last_name
+FROM employees e
+WHERE e.emp_no IN (
+    SELECT s.emp_no
+    FROM salaries s
+    WHERE s.to_date = '9999-01-01' AND
+          s.salary = (SELECT MAX(salary) FROM salaries)
+    );
