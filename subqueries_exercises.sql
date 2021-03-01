@@ -24,3 +24,17 @@ WHERE e.emp_no IN (
     WHERE dm.to_date = '9999-01-01' AND
           e.gender = 'F'
     );
+
+SELECT d.dept_name
+FROM departments d
+WHERE d.dept_no IN (
+    SELECT dm.dept_no
+    FROM dept_manager dm
+    WHERE dm.emp_no IN (
+        SELECT e.emp_no
+        FROM employees e
+        WHERE dm.to_date = '9999-01-01' AND
+              e.gender = 'F'
+        )
+    )
+ORDER BY d.dept_name;
