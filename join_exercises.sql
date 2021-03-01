@@ -42,4 +42,4 @@ FROM employees e
          JOIN employees em ON em.emp_no = dm.emp_no
 WHERE de.to_date = '9999-01-01' AND
         dm.to_date = '9999-01-01'
-ORDER BY d.dept_name;
+ORDER BY d.dept_name, e.emp_no;
